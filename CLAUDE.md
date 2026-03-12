@@ -13,9 +13,10 @@ python3 -m http.server 8000
 - `index.html` — Single-page site with section anchors
 - `privacy.html` — Privacy policy
 - `css/style.css` — All styles, CSS custom properties theming
-- `js/main.js` — Events loader, scroll animations, mobile menu
+- `js/main.js` — Hero image randomizer, events loader, scroll animations, mobile menu
 - `data/events.json` — Event data (edit this to add/remove events)
-- `images/` — Logo, hero, and other assets
+- `images/` — Logo and other assets
+- `images/hero/` — Hero background images (randomly selected on each page load)
 - `CNAME` — Custom domain for GitHub Pages
 
 ## Events
@@ -23,6 +24,10 @@ Edit `data/events.json` to manage events. Format:
 {"title": "...", "date": "YYYY-MM-DD", "location": "...", "description": "...", "url": "..."}
 
 Past events are automatically hidden.
+
+## Hero Images
+Add .jpg images to `images/hero/` and update the `heroImages` array in `js/main.js`.
+A random image is selected on each page load. The CSS gradient serves as a fallback.
 
 ## Colors (PNW Nature palette)
 --forest: #2D4A3E, --evergreen: #3A6B5C, --mist: #B8C9C0

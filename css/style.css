@@ -693,55 +693,18 @@ body.menu-open {
 }
 
 /* ============================
-   Newsletter Section
-   ============================ */
-
-.newsletter {
-  background: var(--forest);
-  color: var(--white);
-}
-
-.newsletter-content {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.newsletter h2 {
-  color: var(--white);
-}
-
-.newsletter p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.newsletter-form {
-  margin-top: var(--space-md);
-}
-
-.newsletter-placeholder {
-  color: rgba(255, 255, 255, 0.6);
-  font-style: italic;
-}
-
-/* ============================
    Join Section
    ============================ */
 
 .join-content {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto;
 }
 
 .join .btn-primary {
   font-size: 1.1rem;
   padding: 16px 40px;
-}
-
-.instagram-feed {
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* ============================

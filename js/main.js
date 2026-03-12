@@ -2,12 +2,35 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
+  initHeroImage();
   initMobileMenu();
   initScrollAnimations();
   initEventsLoader();
   initActiveNav();
   initNavScroll();
 });
+
+/* ====================================================================
+   Random Hero Background Image
+   ==================================================================== */
+function initHeroImage() {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  // Add image filenames to this array as you add photos to images/hero/
+  var heroImages = [
+    'images/hero/hero-1.jpg',
+    'images/hero/hero-2.jpg',
+    'images/hero/hero-3.jpg',
+    'images/hero/hero-4.jpg',
+    'images/hero/hero-5.jpg'
+  ];
+
+  var randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
+  hero.style.backgroundImage = 'url(' + randomImage + ')';
+  hero.style.backgroundSize = 'cover';
+  hero.style.backgroundPosition = 'center';
+}
 
 /* ====================================================================
    Task 10: Mobile Menu
@@ -228,7 +251,7 @@ function buildEventCard(event) {
    Task 13: Active Nav Link Highlighting
    ==================================================================== */
 function initActiveNav() {
-  var sections = document.querySelectorAll('#about, #events, #newsletter, #join');
+  var sections = document.querySelectorAll('#about, #events, #join');
   var navLinks = document.querySelectorAll('.nav-link');
   if (!sections.length || !navLinks.length) return;
 
