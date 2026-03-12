@@ -277,6 +277,14 @@ p {
   transform-origin: left;
 }
 
+.nav-link.active {
+  color: var(--evergreen);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
 .nav-social {
   display: flex;
   gap: 16px;
@@ -387,6 +395,14 @@ body.menu-open {
   .nav-menu.active .nav-link {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .nav-link.active {
+    color: var(--mist);
+  }
+
+  .nav-link.active::after {
+    background-color: var(--white);
   }
 
   .nav-menu.active li:nth-child(1) .nav-link { transition-delay: 0.1s; }
@@ -559,7 +575,7 @@ body.menu-open {
 .events-grid {
   display: grid;
   gap: var(--space-md);
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .event-card {
