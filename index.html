@@ -15,6 +15,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <noscript><style>.animate-on-scroll{opacity:1!important;transform:none!important;}</style></noscript>
+  <script>
+    // Set random hero image immediately (before render) to avoid green flash
+    (function() {
+      var images = [
+        'images/hero/hero-1.jpg',
+        'images/hero/hero-2.jpg',
+        'images/hero/hero-3.jpg',
+        'images/hero/hero-4.jpg',
+        'images/hero/hero-5.jpg'
+      ];
+      var pick = images[Math.floor(Math.random() * images.length)];
+      document.documentElement.style.setProperty('--hero-bg', 'url(' + pick + ')');
+    })();
+  </script>
 </head>
 <body>
 
