@@ -436,7 +436,10 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a2f25 0%, #2D4A3E 30%, #3A6B5C 60%, #1e3a2f 100%);
+  background-color: var(--forest);
+  background-image: linear-gradient(135deg, #1a2f25 0%, #2D4A3E 30%, #3A6B5C 60%, #1e3a2f 100%);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Subtle texture overlay for depth */

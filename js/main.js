@@ -28,8 +28,6 @@ function initHeroImage() {
 
   var randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
   hero.style.backgroundImage = 'url(' + randomImage + ')';
-  hero.style.backgroundSize = 'cover';
-  hero.style.backgroundPosition = 'center';
 }
 
 /* ====================================================================
