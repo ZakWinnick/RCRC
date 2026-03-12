@@ -1,0 +1,41 @@
+/* ============================
+   Redwood Coast Rivian Club
+   PNW Nature Theme
+   ============================ */
+
+:root {
+  /* Brand palette — Pacific Northwest Nature */
+  --forest: #2D4A3E;
+  --evergreen: #3A6B5C;
+  --mist: #B8C9C0;
+  --fog: #E8EDEA;
+  --cloud: #F5F7F6;
+  --bark: #8B6F4E;
+  --white: #FFFFFF;
+  --charcoal: #1A1A1A;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+
+  /* Layout */
+  --nav-height: 80px;
+  --container-max: 1100px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.10);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.14);
+}
