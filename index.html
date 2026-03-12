@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/style.css">
   <noscript><style>.animate-on-scroll{opacity:1!important;transform:none!important;}</style></noscript>
   <script>
-    // Set random hero image immediately (before render) to avoid green flash
+    // Inject random hero image as a style rule before first render
     (function() {
       var images = [
         'images/hero/hero-1.jpg',
@@ -26,7 +26,9 @@
         'images/hero/hero-5.jpg'
       ];
       var pick = images[Math.floor(Math.random() * images.length)];
-      document.documentElement.style.setProperty('--hero-bg', 'url(' + pick + ')');
+      var s = document.createElement('style');
+      s.textContent = '.hero{background-image:url(' + pick + ')}';
+      document.head.appendChild(s);
     })();
   </script>
 </head>

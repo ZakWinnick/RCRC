@@ -455,7 +455,6 @@ body.menu-open {
   justify-content: center;
   overflow: hidden;
   background-color: var(--forest);
-  background-image: var(--hero-bg);
   background-size: cover;
   background-position: center;
 }
