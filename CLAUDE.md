@@ -25,7 +25,9 @@ Push to `main` branch deploys automatically via GitHub Pages. The `CNAME` file m
 - `privacy.html` — Standalone privacy policy page with simplified nav
 
 ### Hero Image Randomization
-An inline `<script>` in `index.html`'s `<head>` picks a random image path and stores it in `window.__heroImage`. Then a small inline script right after the `<img class="hero-bg">` element sets its `src`. The image uses `object-fit: cover` to fill the hero section. To add/remove hero images, edit the `images` array in the `<head>` script and add files to `images/hero/`.
+An inline `<script>` directly in the hero section shuffles a list of image paths, then assigns them to `#hero-bg` one by one until one loads. This prevents a blank hero when an image fails to decode. The image uses `object-fit: cover` to fill the hero section.
+
+Important: use browser-compatible assets in the randomization list. In this repo, `images/hero/hero-2.jpg` and `images/hero/hero-5.jpg` are HEIC originals; the rotation uses their converted JPEG variants `images/hero/hero-2-web.jpg` and `images/hero/hero-5-web.jpg`.
 
 ### Events System
 `js/main.js` fetches `data/events.json` on page load, filters out past events (by comparing against today's date), sorts ascending, and renders cards using safe DOM methods (`createElement`/`textContent` — no `innerHTML`). When no upcoming events exist, an empty-state message appears. After rendering, `initScrollAnimations()` is re-called so new cards get entrance animations.

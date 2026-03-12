@@ -16,19 +16,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://tinylytics.app/embed/RvmwcSyH_ZZvMDS7AMqq.js" defer></script>
   <noscript><style>.animate-on-scroll{opacity:1!important;transform:none!important;}</style></noscript>
-  <script>
-    // Pick a random hero image before first render
-    (function() {
-      var images = [
-        'images/hero/hero-1.jpg',
-        'images/hero/hero-2.jpg',
-        'images/hero/hero-3.jpg',
-        'images/hero/hero-4.jpg',
-        'images/hero/hero-5.jpg'
-      ];
-      window.__heroImage = images[Math.floor(Math.random() * images.length)];
-    })();
-  </script>
 </head>
 <body>
 
@@ -73,8 +60,43 @@
 
   <!-- ======================== Hero ======================== -->
   <section id="home" class="hero">
-    <img class="hero-bg" src="" alt="" aria-hidden="true">
-    <script>document.querySelector('.hero-bg').src = window.__heroImage;</script>
+    <img class="hero-bg" id="hero-bg" src="images/hero/hero-1.jpg" alt="" aria-hidden="true">
+    <script>
+      (function() {
+        // Use web-safe hero assets for broad browser compatibility.
+        var imgs = [
+          'images/hero/hero-1.jpg',
+          'images/hero/hero-2-web.jpg',
+          'images/hero/hero-3.jpg',
+          'images/hero/hero-4.jpg',
+          'images/hero/hero-5-web.jpg'
+        ];
+        var hero = document.getElementById('hero-bg');
+        if (!hero || !imgs.length) return;
+
+        // Shuffle once so each page load still starts from a random candidate.
+        for (var i = imgs.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = imgs[i];
+          imgs[i] = imgs[j];
+          imgs[j] = tmp;
+        }
+
+        var idx = 0;
+        function tryNextImage() {
+          if (idx >= imgs.length) return;
+          hero.src = imgs[idx++];
+        }
+
+        hero.addEventListener('error', tryNextImage);
+        hero.addEventListener('load', function onLoad() {
+          hero.removeEventListener('error', tryNextImage);
+          hero.removeEventListener('load', onLoad);
+        });
+
+        tryNextImage();
+      })();
+    </script>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <h1 class="hero-title">Adventure<br>Recharged.</h1>
