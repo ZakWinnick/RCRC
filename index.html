@@ -17,7 +17,7 @@
   <script src="https://tinylytics.app/embed/RvmwcSyH_ZZvMDS7AMqq.js" defer></script>
   <noscript><style>.animate-on-scroll{opacity:1!important;transform:none!important;}</style></noscript>
   <script>
-    // Inject random hero image as a style rule before first render
+    // Pick a random hero image before first render
     (function() {
       var images = [
         'images/hero/hero-1.jpg',
@@ -26,10 +26,7 @@
         'images/hero/hero-4.jpg',
         'images/hero/hero-5.jpg'
       ];
-      var pick = images[Math.floor(Math.random() * images.length)];
-      var s = document.createElement('style');
-      s.textContent = '.hero{background-image:url(' + pick + ')}';
-      document.head.appendChild(s);
+      window.__heroImage = images[Math.floor(Math.random() * images.length)];
     })();
   </script>
 </head>
@@ -76,6 +73,8 @@
 
   <!-- ======================== Hero ======================== -->
   <section id="home" class="hero">
+    <img class="hero-bg" src="" alt="" aria-hidden="true">
+    <script>document.querySelector('.hero-bg').src = window.__heroImage;</script>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <h1 class="hero-title">Adventure<br>Recharged.</h1>
