@@ -39,3 +39,167 @@
   --shadow-md: 0 8px 24px rgba(0,0,0,0.10);
   --shadow-lg: 0 16px 48px rgba(0,0,0,0.14);
 }
+
+/* ============================
+   Reset
+   ============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: var(--evergreen);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--forest);
+}
+
+/* ============================
+   Typography
+   ============================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--forest);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+}
+
+h5 {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+h6 {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+/* ============================
+   Layout Utilities
+   ============================ */
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+.section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: var(--evergreen);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================
+   Buttons
+   ============================ */
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--evergreen);
+  color: var(--white);
+  border-color: var(--evergreen);
+}
+
+.btn-primary:hover {
+  background-color: var(--forest);
+  border-color: var(--forest);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--forest);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
