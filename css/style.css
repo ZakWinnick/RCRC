@@ -551,3 +551,127 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================
+   Events Section
+   ============================ */
+
+.events-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.event-card {
+  display: flex;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: var(--space-sm);
+  background: var(--bark);
+  color: var(--white);
+}
+
+.event-month {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.event-day {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.event-details {
+  padding: var(--space-md);
+  flex: 1;
+}
+
+.event-details h3 {
+  margin-bottom: var(--space-xs);
+  color: var(--forest);
+}
+
+.event-location {
+  font-size: 0.9rem;
+  color: var(--bark);
+  margin-bottom: var(--space-xs);
+}
+
+.event-location i {
+  margin-right: 4px;
+}
+
+.event-desc {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-sm);
+}
+
+.event-link {
+  font-weight: 600;
+  color: var(--evergreen);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-link i {
+  transition: transform 0.3s ease;
+}
+
+.event-link:hover {
+  color: var(--forest);
+}
+
+.event-link:hover i {
+  transform: translateX(4px);
+}
+
+.events-empty {
+  text-align: center;
+  padding: var(--space-lg);
+  color: #777;
+}
+
+.events-empty i {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--mist);
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    flex-direction: column;
+  }
+
+  .event-date {
+    flex-direction: row;
+    min-width: unset;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .event-day {
+    font-size: 1.4rem;
+  }
+}
