@@ -230,9 +230,23 @@ p {
   height: var(--nav-height);
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
 .nav-logo img {
   height: 48px;
   width: auto;
+}
+
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--forest);
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -346,6 +360,10 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
+  .nav-logo-text {
+    display: none;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -437,35 +455,8 @@ body.menu-open {
   justify-content: center;
   overflow: hidden;
   background-color: var(--forest);
-  background-image: linear-gradient(135deg, #1a2f25 0%, #2D4A3E 30%, #3A6B5C 60%, #1e3a2f 100%);
   background-size: cover;
   background-position: center;
-}
-
-/* Subtle texture overlay for depth */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(58, 107, 92, 0.3) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(184, 201, 192, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(26, 47, 37, 0.4) 0%, transparent 60%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Mist-like floating glow */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 60%;
-  height: 80%;
-  background: radial-gradient(ellipse, rgba(184, 201, 192, 0.06) 0%, transparent 70%);
-  z-index: 1;
-  pointer-events: none;
 }
 
 .hero-overlay {
@@ -728,6 +719,8 @@ body.menu-open {
 }
 
 .footer-brand img {
+  height: 48px;
+  width: auto;
   margin-bottom: var(--space-sm);
 }
 
