@@ -407,3 +407,91 @@ body.menu-open {
     color: var(--white);
   }
 }
+
+/* ============================
+   Hero Section
+   ============================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2f25 0%, #2D4A3E 30%, #3A6B5C 60%, #1e3a2f 100%);
+}
+
+/* Subtle texture overlay for depth */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(58, 107, 92, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(184, 201, 192, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(26, 47, 37, 0.4) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Mist-like floating glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(184, 201, 192, 0.06) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.15) 0%,
+    rgba(26, 26, 26, 0.05) 40%,
+    rgba(26, 26, 26, 0.2) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  margin-bottom: var(--space-lg);
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
