@@ -62,7 +62,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--charcoal);
-  background-color: var(--white);
+  background-color: var(--cloud);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
