@@ -495,3 +495,59 @@ body.menu-open {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* ============================
+   About Section
+   ============================ */
+
+.about {
+  background-color: var(--fog);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.about-card {
+  background: var(--white);
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.about-card i {
+  font-size: 2rem;
+  color: var(--evergreen);
+  margin-bottom: var(--space-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(58, 107, 92, 0.1);
+}
+
+.about-card h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.about-card p {
+  color: #555;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
