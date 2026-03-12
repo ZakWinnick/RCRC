@@ -28,6 +28,7 @@
   /* Layout */
   --nav-height: 80px;
   --container-max: 1100px;
+  --hero-image-opacity: 0.72;
 
   /* Radius */
   --radius-sm: 6px;
@@ -211,7 +212,7 @@ p {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1500;
   background: rgba(245, 247, 246, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -328,7 +329,7 @@ p {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1001;
+  z-index: 1501;
 }
 
 .nav-toggle span {
@@ -379,12 +380,14 @@ body.menu-open {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
-    z-index: 1000;
+    z-index: 2000;
+    pointer-events: none;
   }
 
   .nav-menu.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-links {
@@ -463,6 +466,7 @@ body.menu-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: var(--hero-image-opacity);
   z-index: 1;
 }
 
