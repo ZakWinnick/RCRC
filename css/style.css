@@ -668,6 +668,23 @@ body.menu-open {
   transform: translateX(4px);
 }
 
+.events-note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: var(--space-md);
+}
+
+.events-note a {
+  color: var(--evergreen);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.events-note a:hover {
+  text-decoration: underline;
+}
+
 .events-empty {
   text-align: center;
   padding: var(--space-lg);
@@ -739,6 +756,15 @@ body.menu-open {
   font-size: 0.85rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-brand p a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+}
+
+.footer-brand p a:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-links {
